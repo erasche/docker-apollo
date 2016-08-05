@@ -1,16 +1,8 @@
 version: '2'
 services:
-  remote_user:
-    image: quay.io/erasche/remote_user_proxy
-    links:
-      - apollo:target
-    ports:
-      - "8080:80"
-    environment:
-      BACKEND_URL: "http://target:8080"
-      REMOTE_USER: admin@local.host
   apollo:
-    image: quay.io/erasche/apollo:remote_user
+    build: .
+    #image: quay.io/erasche/apollo:remote_user
     links:
       - db
       - chado

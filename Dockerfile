@@ -17,11 +17,9 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node && \
     useradd -ms /bin/bash -d /apollo apollo
 
 # RUN cpan notest install Text::Markdown  # needed for apollo release
-ENV WEBAPOLLO_VERSION 4f5f0d3cc4ad088038bce7acf1eb24051b72ad7c
-RUN curl -L https://github.com/nathandunn/Apollo/archive/${WEBAPOLLO_VERSION}.tar.gz | tar xzf - --strip-components=1 -C /apollo
+ENV WEBAPOLLO_VERSION de431f6255428ab39ac28958274cf212d5145bd6
+RUN curl -L https://github.com/gmod/Apollo/archive/${WEBAPOLLO_VERSION}.tar.gz | tar xzf - --strip-components=1 -C /apollo
 
-
-RUN cpan notest install Text::Markdown  # needed for apollo release
 COPY build.sh /bin/build.sh
 ADD apollo-config.groovy /apollo/apollo-config.groovy
 

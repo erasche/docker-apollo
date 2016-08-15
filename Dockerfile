@@ -31,5 +31,3 @@ USER root
 
 RUN rm -rf ${CATALINA_HOME}/webapps/* && \
     cp /apollo/target/apollo*.war ${CATALINA_HOME}/webapps/apollo.war
-
-RUN cp -Rv ${CATALINA_HOME}/webapps/apollo.war ${CATALINA_HOME}/webapps/apollo-dev.war

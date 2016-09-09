@@ -81,6 +81,9 @@ apollo {
     translation_table           = "/config/translation_tables/ncbi_11_translation_table.txt"
     get_translation_code        = 11
 
+    chado_export_fasta_for_sequence = true
+    chado_export_fasta_for_cds = false
+
     // TODO: should come from config or via preferences database
     splice_donor_sites = []
     splice_acceptor_sites = []

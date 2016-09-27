@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update --fix-missing && \
     apt-get --no-install-recommends -y install \
-    git build-essential maven2 openjdk-7-jdk libpq-dev postgresql-common \
+    git build-essential libssl-dev maven2 openjdk-7-jdk libpq-dev postgresql-common \
     postgresql-client xmlstarlet netcat libpng12-dev zlib1g-dev libexpat1-dev \
     ant perl5 curl ssl-cert nodejs npm && \
     apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

@@ -1,6 +1,6 @@
 # WebApollo
 # VERSION 2.0
-FROM tomcat:7
+FROM tomcat:8
 MAINTAINER Eric Rasche <esr@tamu.edu>, Nathan Dunn <nathandunn@lbl.gov>
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -18,7 +18,7 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node && \
 
 # RUN cpan notest install Text::Markdown  # needed for apollo release
 # 2.0.4
-ENV WEBAPOLLO_VERSION e0aa79bdc792cdda231b910800d2f90c48dac199
+ENV WEBAPOLLO_VERSION f49142187db46d816a9f874984bee261389756b2
 RUN curl -L https://github.com/GMOD/Apollo/archive/${WEBAPOLLO_VERSION}.tar.gz | tar xzf - --strip-components=1 -C /apollo
 
 

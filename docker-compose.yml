@@ -1,7 +1,8 @@
 version: '2'
 services:
   apollo:
-    image: quay.io/erasche/apollo:cpt
+    #image: quay.io/erasche/apollo:cpt
+    image: cpt-apollo
     links:
       - db
       - chado
@@ -18,7 +19,7 @@ services:
     volumes:
       - "./data:/data"
   db:
-    image: postgres
+    image: postgres:9.5
     environment:
       POSTGRES_PASSWORD: password
   chado:

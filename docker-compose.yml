@@ -1,20 +1,23 @@
 version: '2'
 services:
   apollo:
-    image: quay.io/erasche/apollo:cpt
-    #image: cpt-apollo
+    build: .
+    #image: quay.io/erasche/apollo:cpt
     links:
       - db
       - chado
     ports:
-        - 8080
+      - "8080:8080"
     environment:
       WEBAPOLLO_DB_USERNAME: postgres
       WEBAPOLLO_DB_PASSWORD: password
+      WEBAPOLLO_DB_DRIVER: "org.postgresql.Driver"
+      WEBAPOLLO_DB_DIALECT: "org.hibernate.dialect.PostgresPlusDialect"
       WEBAPOLLO_DB_URI: "jdbc:postgresql://db/postgres"
-
       WEBAPOLLO_CHADO_DB_USERNAME: postgres
       WEBAPOLLO_CHADO_DB_PASSWORD: password
+      WEBAPOLLO_CHADO_DB_DRIVER: "org.postgresql.Driver"
+      WEBAPOLLO_CHADO_DB_DIALECT: "org.hibernate.dialect.PostgresPlusDialect"
       WEBAPOLLO_CHADO_DB_URI: "jdbc:postgresql://chado/postgres"
     volumes:
       - "./data:/data"

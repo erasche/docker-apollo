@@ -43,4 +43,5 @@ RUN rm -rf ${CATALINA_HOME}/webapps/* && \
     cp /apollo/target/apollo*.war /apollo.war
 
 ADD launch.sh /launch.sh
-CMD ["/launch.sh"]
+CMD "/launch.sh"
+

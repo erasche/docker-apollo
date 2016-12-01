@@ -40,4 +40,7 @@ RUN bash /bin/build.sh
 USER root
 
 RUN rm -rf ${CATALINA_HOME}/webapps/* && \
-    cp /apollo/target/apollo*.war ${CATALINA_HOME}/webapps/apollo.war
+    cp /apollo/target/apollo*.war /apollo.war
+
+ADD launch.sh /launch.sh
+CMD ["/launch.sh"]

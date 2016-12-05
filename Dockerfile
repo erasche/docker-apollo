@@ -33,6 +33,7 @@ RUN mv /root/.gradle/ /apollo/.gradle/ && \
 
 COPY build.sh /bin/build.sh
 ADD apollo-config.groovy /apollo/apollo-config.groovy
+ADD annot.json /apollo/annot.json
 
 RUN chown -R apollo:apollo /apollo
 USER apollo
@@ -42,6 +43,6 @@ USER root
 RUN rm -rf ${CATALINA_HOME}/webapps/* && \
     cp /apollo/target/apollo*.war /apollo.war
 
+ENV CONTEXT_PATH ROOT
 ADD launch.sh /launch.sh
 CMD "/launch.sh"
-

@@ -85,6 +85,20 @@
         "gcMode": "skew",
         "min_score": -1,
         "bicolor_pivot": 0
+      },
+      {
+        "label": "cacao",
+        "key": "CACAO Annotations",
+        "storeClass": "JBrowse/Store/SeqFeature/REST",
+        "baseUrl": "https://cpt.tamu.edu/cacao-backend/jbrowse/",
+        "query": {
+            "organism": "{refseq}"
+        },
+        "style": {
+            "color": "function(feature){ if(feature.data.state == 1){ return 'yellow'; } if(feature.data.state == 2){ return 'green';} return 'red';}"
+        },
+        "type": "JBrowse/View/Track/CanvasFeatures",
+        "trackType": "JBrowse/View/Track/CanvasFeatures"
       }
     ],
    "favicon" : "./plugins/WebApollo/img/webapollo_favicon.ico",

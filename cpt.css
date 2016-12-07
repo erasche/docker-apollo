@@ -1,0 +1,10 @@
+.plus-Transmembrane,
+.minus-Transmembrane {
+    position:absolute;
+    height: 11px;
+    background-color: red;
+    background-repeat: repeat-x;
+    min-width: 1px;
+    cursor: pointer;
+    z-index: 10;
+}

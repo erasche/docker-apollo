@@ -10,7 +10,7 @@
       }
    ],
     "share_link" : 0,
-    "css" : "data/cpt.css",
+    "css" : "/cpt.css",
     "tracks" : [
     {
          "autocomplete" : "none",

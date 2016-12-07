@@ -34,6 +34,7 @@ RUN mv /root/.gradle/ /apollo/.gradle/ && \
 COPY build.sh /bin/build.sh
 ADD apollo-config.groovy /apollo/apollo-config.groovy
 ADD annot.json /apollo/annot.json
+ADD cpt.css /apollo/cpt.css
 
 RUN chown -R apollo:apollo /apollo
 USER apollo

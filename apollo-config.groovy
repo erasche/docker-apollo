@@ -130,5 +130,11 @@ jbrowse {
             alwaysRecheck = "true"
             alwaysPull = "true"
         }
+        CACAO {
+            git = 'https://github.com/TAMU-CPT/cacao-apollo-plugin'
+            branch = 'master'
+            alwaysRecheck = "true"
+            alwaysPull = "true"
+        }
     }
 }

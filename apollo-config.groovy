@@ -123,8 +123,7 @@ jbrowse {
         HideTrackLabels{
             included = true
         }
-        // TODO
-        GCContent{
+        GCContent {
             git = 'https://github.com/cmdcolin/GCContent'
             branch = 'master'
             alwaysRecheck = "true"

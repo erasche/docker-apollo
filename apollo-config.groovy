@@ -124,7 +124,7 @@ jbrowse {
             included = true
         }
         GCContent {
-            git = 'https://github.com/cmdcolin/GCContent'
+            git = 'https://github.com/elsiklab/gccontent'
             branch = 'master'
             alwaysRecheck = "true"
             alwaysPull = "true"

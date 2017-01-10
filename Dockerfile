@@ -1,7 +1,7 @@
 # WebApollo
 # VERSION 2.0
 FROM tomcat:8
-MAINTAINER Eric Rasche <esr@tamu.edu>, Nathan Dunn <nathandunn@lbl.gov>
+MAINTAINER Eric Rasche <esr@tamu.edu>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update --fix-missing && \
@@ -42,7 +42,7 @@ RUN bash /bin/build.sh
 USER root
 
 RUN rm -rf ${CATALINA_HOME}/webapps/* && \
-    cp /apollo/target/apollo*.war /apollo.war
+	cp /apollo/target/apollo*.war /apollo.war
 
 ENV CONTEXT_PATH ROOT
 ADD launch.sh /launch.sh

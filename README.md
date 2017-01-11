@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/22018/GMOD/docker-apollo.svg)](https://zenodo.org/badge/latestdoi/22018/GMOD/docker-apollo)
 
-# Apollo
+# Apollo: Center for Phage Technology Flavour
 
 ![Apollo Logo](https://github.com/GMOD/Apollo/blob/master/web-app/images/ApolloLogo_100x36.png)
 
@@ -9,6 +9,8 @@
 > where numerous people may be working on the same sequences in geographically
 > different locations; real-time updating keeps all users in sync during the
 > editing process.
+
+This docker image contains many non-standard changes that are specific to viral annotations.
 
 ## Running the Container
 

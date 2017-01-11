@@ -1,6 +1,4 @@
-[![DOI](https://zenodo.org/badge/22018/GMOD/docker-apollo.svg)](https://zenodo.org/badge/latestdoi/22018/GMOD/docker-apollo)
-
-# Apollo: Center for Phage Technology Flavour
+# Apollo: Center for Phage Technology Edition
 
 ![Apollo Logo](https://github.com/GMOD/Apollo/blob/master/web-app/images/ApolloLogo_100x36.png)
 
@@ -10,7 +8,7 @@
 > different locations; real-time updating keeps all users in sync during the
 > editing process.
 
-This docker image contains many non-standard changes that are specific to viral annotations.
+This docker image contains *many* non-standard changes that are specific to viral annotations.
 
 ## Running the Container
 
@@ -28,19 +26,9 @@ file.
 This procedure starts tomcat in a standard virtualized environment with a PostgreSQL database.
 
 - Install [docker](https://docs.docker.com/engine/installation/) for your system if not previously done.
-
-- Clone docker: `git clone https://github.com/GMOD/docker-apollo`
-- `cd docker-apollo`
-- Copy JBrowse folders into ./data
-- `docker-compose up -d`  # starts the service as a daemon
-- Apollo will be shortly be available at [http://localhost:8080/apollo/](http://localhost:8080/apollo/)
-- Begin working with Apollo as usual. All directories in `data` are
-  accessible in the docker file-system at `/data/` when you add
-  directories. Other similarly exposed directories are `apollo` and
-  `jbrowse`.
-
-To bring down the container:
-- `docker-compose down`
+- `docker run -it -p 8080:8080 erasche/apollo:unified`
+- `docker run -it -v this-directory/data/:/data/ -p 8888:8080 gmod/apollo:stable`
+- Apollo will be available at http://machine-ip:8888/ (or 8080 if you don't figure the port)
 
 ### Logging In
 
@@ -60,7 +48,4 @@ Some sample data is baked into the container for you to play around with:
 
 ### Chado
 
-Chado support is now baked into the GMOD docker container image. A chado
-container is part of the `docker-compose.yml` file and will be started on boot.
-You may wish to expose the postgres port (add a `ports: - 5432` to the
-docker-compose.yml) if you wish to talk to the Chado container.
+Chado support is now baked into the GMOD docker container image.

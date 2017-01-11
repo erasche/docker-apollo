@@ -16,13 +16,9 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node && \
     cp /usr/lib/jvm/java-7-openjdk-amd64/lib/tools.jar /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/tools.jar && \
     useradd -ms /bin/bash -d /apollo apollo
 
-# RUN cpan notest install Text::Markdown  # needed for apollo release
-# 2.0.4
-ENV WEBAPOLLO_VERSION f49142187db46d816a9f874984bee261389756b2
-RUN curl -L https://github.com/GMOD/Apollo/archive/${WEBAPOLLO_VERSION}.tar.gz | tar xzf - --strip-components=1 -C /apollo
-
-
-# RUN cpan notest install Text::Markdown  # needed for apollo release
+# 2.0.5 + CPT Viral Annotation Additinos
+ENV WEBAPOLLO_VERSION f1fb83794581a73aff5a4d02440c43fcd8785470
+RUN curl -L https://github.com/erasche/Apollo/archive/${WEBAPOLLO_VERSION}.tar.gz | tar xzf - --strip-components=1 -C /apollo
 
 RUN cd /apollo && \
 	./grailsw help && \

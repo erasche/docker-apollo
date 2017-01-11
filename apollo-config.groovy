@@ -80,8 +80,15 @@ apollo {
     feature_has_status          = true
     translation_table           = "/config/translation_tables/ncbi_11_translation_table.txt"
     get_translation_code        = 11
+    user_pure_memory_store = true
+    is_partial_translation_allowed = false // unused so far
+    export_subfeature_attrs = true
 
+    // settings for Chado export
+    // set chado_export_fasta_for_sequence if you want the reference sequence FASTA to be exported into the database
+    // Note: Enabling this feature can be memory intensive
     chado_export_fasta_for_sequence = true
+    // set chado_export_fasta_for_cds if you want the CDS FASTA to be exported into the database
     chado_export_fasta_for_cds = false
 
     // TODO: should come from config or via preferences database

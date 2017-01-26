@@ -1,7 +1,8 @@
 version: '2'
 services:
   apollo:
-    build: .
+    #build: .
+    image: apollo
     #image: quay.io/erasche/apollo:cpt
     links:
       - db

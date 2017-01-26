@@ -3,5 +3,5 @@ build:
 
 run:
 	docker-compose kill
-	docker-compose rm apollo
+	docker-compose rm -f apollo
 	docker-compose up

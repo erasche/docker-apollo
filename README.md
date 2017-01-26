@@ -12,9 +12,7 @@ This docker image contains *many* non-standard changes that are specific to vira
 
 ## Running the Container
 
-The container is publicly available as `gmod/apollo:stable`. The recommended
-method for launching the container is via docker-compose due to a dependency on
-a postgres image.
+The container is publicly available as `quay.io/erasche/apollo:cpt`
 
 There are a large number of environment variables that can be adjusted to suit
 your site's needs. These can be seen in the
@@ -23,12 +21,7 @@ file.
 
 ## Quickstart
 
-This procedure starts tomcat in a standard virtualized environment with a PostgreSQL database.
-
-- Install [docker](https://docs.docker.com/engine/installation/) for your system if not previously done.
-- `docker run -it -p 8080:8080 erasche/apollo:unified`
-- `docker run -it -v this-directory/data/:/data/ -p 8888:8080 gmod/apollo:stable`
-- Apollo will be available at http://machine-ip:8888/ (or 8080 if you don't figure the port)
+`docker-compose up`
 
 ### Logging In
 

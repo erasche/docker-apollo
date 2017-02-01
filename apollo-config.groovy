@@ -98,6 +98,12 @@ apollo {
 
     authentications = [
         [
+            "name":"Remote User Authenticator",
+            "className":"remoteUserAuthenticatorService",
+            "active":true,
+            "params": []
+        ],
+        [
             "name":"Username Password Authenticator",
             "className":"usernamePasswordAuthenticatorService",
             "active":true,

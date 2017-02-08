@@ -73,7 +73,7 @@ apollo {
     overlapper_class            = System.getenv("WEBAPOLLO_OVERLAPPER_CLASS") ?: "org.bbop.apollo.sequence.OrfOverlapper"
     use_cds_for_new_transcripts = false
     feature_has_dbxrefs         = true
-    feature_has_attributes      = false
+    feature_has_attributes      = true
     feature_has_pubmed_ids      = false
     feature_has_go_ids          = false
     feature_has_comments        = true

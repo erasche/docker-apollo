@@ -17,7 +17,7 @@ RUN npm install -g bower && \
 	useradd -ms /bin/bash -d /apollo apollo
 
 # 2.0.5 + CPT Viral Annotation Additinos
-ENV WEBAPOLLO_VERSION aa8c59da35a069b103a990f04e2c18b9ad8e6eb1
+ENV WEBAPOLLO_VERSION 1e6832774777015416c44d8f69bb1055094f1fd
 RUN curl -L https://github.com/erasche/Apollo/archive/${WEBAPOLLO_VERSION}.tar.gz | tar xzf - --strip-components=1 -C /apollo
 
 COPY build.sh /bin/build.sh

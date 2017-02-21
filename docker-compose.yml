@@ -23,9 +23,10 @@ services:
     volumes:
       - "./data:/data"
   db:
-    image: postgres:9.5
+    image: erasche/chado:latest
     environment:
       POSTGRES_PASSWORD: password
+      INSTALL_CHADO_SCHEMA: "0"
   chado:
     image: erasche/chado:latest
     environment:

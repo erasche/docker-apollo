@@ -3855,6 +3855,27 @@ define([
                 this.openDialog("GFF3", content);
             },
 
+            getCacaoWindow: function(){
+                var selected = this.selectionManager.getSelection()[0];
+                var id = null,
+                    context = null;
+                if(selected.feature.data.parent_type == "gene"){
+                    id = selected.feature.data.parent_id;
+                    context = selected.feature;
+                }else{
+                    if(selected.feature._parent.data.parent_type == "gene"){
+                        id = selected.feature._parent.data.parent_id;
+                        context = selected.feature._parent;
+                    }
+                }
+                var spec = {
+                    action: "iframeDialog",
+                    url: "http://localhost:10000/#/gaf/create/?gene_id=" + id,
+                };
+                var evt;
+                selected.track._openDialog(spec, evt, context);
+            },
+
             getSequence: function () {
                 var selected = this.selectionManager.getSelection();
                 this.getSequenceForSelectedFeatures(selected);
@@ -4511,6 +4532,20 @@ define([
                     }
                 }));
                 contextMenuItems["get_gff3"] = index++;
+
+
+                annot_context_menu.addChild(new dijit.MenuSeparator());
+                index++;
+                // Cacao
+                annot_context_menu.addChild(new dijit.MenuItem({
+                    label: "Make CACAO Annotation",
+                    onClick: function (event) {
+                        thisB.getCacaoWindow();
+                    }
+                }));
+                contextMenuItems["make_cacao"] = index++;
+                annot_context_menu.addChild(new dijit.MenuSeparator());
+                index++;
 
                 annot_context_menu.addChild(new dijit.MenuItem({
                     label: "Zoom to Base Level",

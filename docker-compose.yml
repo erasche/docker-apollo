@@ -20,6 +20,13 @@ services:
       WEBAPOLLO_CHADO_DB_DRIVER: "org.postgresql.Driver"
       WEBAPOLLO_CHADO_DB_DIALECT: "org.hibernate.dialect.PostgresPlusDialect"
       WEBAPOLLO_CHADO_DB_URI: "jdbc:postgresql://chado/postgres"
+      # Optional, allow image to 'wait'
+      WEBAPOLLO_DB_HOST: db
+      WEBAPOLLO_DB_PORT: 5432
+      WEBAPOLLO_DB_NAME: postgres
+      WEBAPOLLO_CHADO_DB_HOST: chado
+      WEBAPOLLO_CHADO_DB_PORT: 5432
+      WEBAPOLLO_CHADO_DB_NAME: postgres
     volumes:
       - "./data:/data"
   db:

@@ -3870,10 +3870,70 @@ define([
                 }
                 var spec = {
                     action: "iframeDialog",
-                    url: "http://localhost:10000/#/gaf/create/?gene_id=" + id,
+                    url: "http://localhost:10000/#/gaf/create/?hideNav=1&gene_id=" + id,
                 };
+
+                var organism = $("div.menuBar table span[role='option']").text();
+
                 var evt;
-                selected.track._openDialog(spec, evt, context);
+                // First we need to test if the feature exists. If it doesn't, create it.
+                dojo.xhrGet({
+                    url: "http://localhost/genes/" + id + "/",
+                    load: function (response, ioArgs) {
+                        // If it is good, just show the popup.
+                        selected.track._openDialog(spec, evt, context);
+                    },
+                    // The ERROR function will be called in an error case.
+                    error: function (response, ioArgs) {
+                        console.log("Feature does not exist");
+                        // Otherwise, we need to create the feature.
+
+                        var refseq = selected.track.genomeView.ref.name;
+                        console.log('sel', selected);
+
+                        // First, get refseq/organism IDs.
+                        dojo.xhrGet({
+                            url: "http://localhost/refseq/?name=" + refseq + "&organism__common_name=" + organism,
+                            handleAs: "json",
+                            load: function(response){
+                                var djangoRefSeqId = response.results[0].id,
+                                    djangoOrganismId = response.results[0].organism;
+                                // Here we have our two IDs, so we can now POST the feature.
+                                var postData = {
+                                    "id": id,
+                                    "start": selected.feature.data.start,
+                                    "end": selected.feature.data.end,
+                                    "strand": selected.feature.data.strand,
+                                    "refseq": djangoRefSeqId,
+                                    "db_object_id": id,
+                                    "db_object_symbol": id,
+                                    "db_object_name": "",
+                                    "db_object_synonym": "",
+                                    "db_object_type": "protein",
+                                    "gene_product_id": "",
+                                };
+
+                                dojo.xhrPost({
+                                    postData: postData,
+                                    url: "http://localhost/genes/",
+                                    handleAs: "json",
+                                    timeout: 5000 * 1000, // Time in milliseconds
+                                    load: function (response, ioArgs) {
+                                        console.log("Feature created!");
+                                        selected.track._openDialog(spec, evt, context);
+                                    },
+                                    error: function(response){
+                                        console.log("Failed to create feature", response);
+                                    }
+                                });
+                            },
+                            error: function(response){
+                                console.log("Unknown organism", response);
+                            }
+                        });
+                        
+                    }
+                });
             },
 
             getSequence: function () {

@@ -113,8 +113,8 @@ apollo {
 
 jbrowse {
     git {
-        url = "https://github.com/erasche/jbrowse"
-        tag = "cpt-custom-1"
+        url = "https://github.com/gmod/jbrowse"
+        tag = "99d8e6e1e7dfe290b839d41c18f41cf92d9afc7c"
         alwaysPull = true
         alwaysRecheck = true
     }

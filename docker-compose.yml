@@ -30,12 +30,12 @@ services:
     volumes:
       - "./data:/data"
   db:
-    image: erasche/chado:latest
+    image: erasche/chado:1.31-jenkins97-pg9.5
     environment:
       POSTGRES_PASSWORD: password
       INSTALL_CHADO_SCHEMA: "0"
   chado:
-    image: erasche/chado:latest
+    image: erasche/chado:1.31-jenkins97-pg9.5
     environment:
       - POSTGRES_PASSWORD=password
       # The default chado image would try to install the schema on first run

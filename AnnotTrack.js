@@ -3870,7 +3870,7 @@ define([
                 }
                 var spec = {
                     action: "iframeDialog",
-                    url: "http://localhost:10000/#/gaf/create/?hideNav=1&gene_id=" + id,
+                    url: "https://cpt.tamu.edu/cacao/#/gaf/create/?hideNav=1&gene_id=" + id,
                 };
 
                 var organism = $("div.menuBar table span[role='option']").text();
@@ -3878,7 +3878,7 @@ define([
                 var evt;
                 // First we need to test if the feature exists. If it doesn't, create it.
                 dojo.xhrGet({
-                    url: "http://localhost/genes/" + id + "/",
+                    url: "https://cpt.tamu.edu/cacao-backend/genes/" + id + "/",
                     load: function (response, ioArgs) {
                         // If it is good, just show the popup.
                         selected.track._openDialog(spec, evt, context);
@@ -3893,7 +3893,7 @@ define([
 
                         // First, get refseq/organism IDs.
                         dojo.xhrGet({
-                            url: "http://localhost/refseq/?name=" + refseq + "&organism__common_name=" + organism,
+                            url: "https://cpt.tamu.edu/cacao-backend/refseq/?name=" + refseq + "&organism__common_name=" + organism,
                             handleAs: "json",
                             load: function(response){
                                 var djangoRefSeqId = response.results[0].id,
@@ -3915,7 +3915,7 @@ define([
 
                                 dojo.xhrPost({
                                     postData: postData,
-                                    url: "http://localhost/genes/",
+                                    url: "https://cpt.tamu.edu/cacao-backend/genes/",
                                     handleAs: "json",
                                     timeout: 5000 * 1000, // Time in milliseconds
                                     load: function (response, ioArgs) {
@@ -3931,7 +3931,7 @@ define([
                                 console.log("Unknown organism", response);
                             }
                         });
-                        
+
                     }
                 });
             },

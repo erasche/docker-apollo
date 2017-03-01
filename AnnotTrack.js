@@ -4598,7 +4598,7 @@ define([
                 index++;
                 // Cacao
                 annot_context_menu.addChild(new dijit.MenuItem({
-                    label: "Make CACAO Annotation",
+                    label: "Make CPT GO Annotation",
                     onClick: function (event) {
                         thisB.getCacaoWindow();
                     }

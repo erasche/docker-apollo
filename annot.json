@@ -93,7 +93,7 @@
       {
         "storeClass": "CACAO/Store/SeqFeature/REST",
         "type": "CACAO/View/Track/CanvasFeatures",
-        "label": "CACAO",
+        "label": "CPT GO Annotations",
         "key": "CACAO",
         "baseUrl": "https://cpt.tamu.edu/cacao-backend/jbrowse/",
       }

@@ -140,5 +140,11 @@ jbrowse {
             alwaysRecheck = "true"
             alwaysPull = "true"
         }
+        BlastView {
+            git = 'https://github.com/TAMU-CPT/blastview'
+            branch = 'master'
+            alwaysRecheck = "true"
+            alwaysPull = "true"
+        }
     }
 }

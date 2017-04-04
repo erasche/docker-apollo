@@ -2,6 +2,8 @@
 set -ex
 
 cd /apollo/ && \
+	echo '@import url("cpt.css");' >> client/apollo/css/main.css && \
+	cp /apollo/cpt.css client/apollo/css/cpt.css && \
 	./apollo deploy && \
 	cp /apollo/annot.json /apollo/web-app/jbrowse/plugins/WebApollo/json/annot.json && \
 	cp /apollo/annot.json /apollo/jbrowse-download/plugins/WebApollo/json/annot.json && \

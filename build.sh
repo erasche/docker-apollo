@@ -11,4 +11,10 @@ cd /apollo/ && \
 	cp /apollo/AnnotTrack.js /apollo/client/apollo/js/View/Track/AnnotTrack.js && \
 	cp /apollo/AnnotTrack.js /apollo/web-app/jbrowse/plugins/WebApollo/js/View/Track/AnnotTrack.js && \
 	cp /apollo/AnnotTrack.js /apollo/jbrowse-download/plugins/WebApollo/js/View/Track/AnnotTrack.js && \
-	./apollo deploy
+	./apollo deploy && \
+	# Move to tmp dir
+	cp /apollo/target/apollo*.war /tmp/apollo.war && \
+	# So we can remove ~1.6 GB of cruft from the image
+	rm -rf /apollo/ && \
+	# Before moving back into a standardized location (that we have write access to)
+	mv /tmp/apollo.war /apollo/apollo.war

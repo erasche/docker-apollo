@@ -4599,7 +4599,7 @@ define([
 
                 annot_context_menu.addChild(new dijit.MenuItem({
                     label: "Get GFF3",
-                    nClick: function (event) {
+                    onClick: function (event) {
                         thisB.getGff3();
                     }
                 }));

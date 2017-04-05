@@ -31,9 +31,6 @@ USER apollo
 RUN bash /bin/build.sh
 USER root
 
-RUN rm -rf ${CATALINA_HOME}/webapps/* && \
-	cp /apollo/target/apollo*.war /apollo.war
-
 ENV CONTEXT_PATH ROOT
 ADD launch.sh /launch.sh
 CMD "/launch.sh"

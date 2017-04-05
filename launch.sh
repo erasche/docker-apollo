@@ -3,7 +3,9 @@
 FIXED_CTX=$(echo "${CONTEXT_PATH}" | sed 's|/|#|g')
 WAR_FILE=${CATALINA_HOME}/webapps/${FIXED_CTX}.war
 
-cp /apollo.war ${WAR_FILE}
+rm -rf ${CATALINA_HOME}/webapps/*
+
+cp /apollo/target/apollo*.war ${WAR_FILE}
 if [ ! -z "$WEBAPOLLO_DB_HOST" ]; then
 	until pg_isready -h $WEBAPOLLO_DB_HOST -p $WEBAPOLLO_DB_PORT -U $WEBAPOLLO_DB_USERNAME -d $WEBAPOLLO_DB_NAME; do
 		echo "Sleeping on DB"

@@ -1,8 +1,16 @@
 version: '2'
 services:
+  remote_user:
+    image: quay.io/tamu_cpt/remote-user-proxy:latest
+    links:
+      - apollo:target
+    ports:
+      - "9998:80"
+    environment:
+      BACKEND_URL: "http://target:8080"
+      REMOTE_USER: user@example.com
   apollo:
-    build: .
-    #image: quay.io/erasche/apollo:cpt
+    image: quay.io/erasche/apollo:cpt
     links:
       - db
       - chado

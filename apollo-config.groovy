@@ -146,5 +146,11 @@ jbrowse {
             alwaysRecheck = "true"
             alwaysPull = "true"
         }
+        Bookmarks {
+            git = 'https://github.com/awilkey/bookmarks-jbrowse/'
+            branch = 'master'
+            alwaysRecheck = "true"
+            alwaysPull = "true"
+        }
     }
 }

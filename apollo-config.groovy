@@ -147,7 +147,7 @@ jbrowse {
             alwaysPull = "true"
         }
         Bookmarks {
-            git = 'https://github.com/tamu-cpt/bookmarks-jbrowse/'
+            git = 'https://github.com/tamu-cpt/bookmarks-jbrowse'
             branch = 'allow-loc-only'
             alwaysRecheck = "true"
             alwaysPull = "true"

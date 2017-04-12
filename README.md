@@ -42,3 +42,10 @@ Some sample data is baked into the container for you to play around with:
 ### Chado
 
 Chado support is now baked into the GMOD docker container image.
+
+## WAR Builder
+
+```console
+docker build -t builder -f Dockerfile.builder .
+docker run -it -v `pwd`/build:/output builder
+```

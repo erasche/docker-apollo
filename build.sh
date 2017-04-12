@@ -18,3 +18,7 @@ cd /apollo/ && \
 	rm -rf /apollo/ || true && \
 	# Before moving back into a standardized location (that we have write access to)
 	mv /tmp/apollo.war /apollo/apollo.war
+
+if [ -d /output/ ]; then
+	cp /apollo/apollo.war /output/;
+fi

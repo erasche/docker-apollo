@@ -146,11 +146,5 @@ jbrowse {
             alwaysRecheck = "true"
             alwaysPull = "true"
         }
-        Bookmarks {
-            git = 'https://github.com/tamu-cpt/bookmarks-jbrowse'
-            branch = 'allow-loc-only'
-            alwaysRecheck = "true"
-            alwaysPull = "true"
-        }
     }
 }

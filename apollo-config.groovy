@@ -35,7 +35,7 @@ environments {
             }
         }
         dataSource_chado {
-            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+            dbCreate = "update"
             username = System.getenv("WEBAPOLLO_CHADO_DB_USERNAME")
             password = System.getenv("WEBAPOLLO_CHADO_DB_PASSWORD")
 

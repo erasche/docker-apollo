@@ -1,5 +1,6 @@
 #!/bin/bash
 set -ex
+export JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk/jre
 
 cd /apollo/ && \
 	echo '@import url("cpt.css");' >> client/apollo/css/main.css && \

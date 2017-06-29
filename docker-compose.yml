@@ -20,19 +20,12 @@ services:
       WEBAPOLLO_DB_PASSWORD: password
       WEBAPOLLO_DB_DRIVER: "org.postgresql.Driver"
       WEBAPOLLO_DB_DIALECT: "org.hibernate.dialect.PostgresPlusDialect"
-      WEBAPOLLO_DB_URI: "jdbc:postgresql://db/postgres"
+      WEBAPOLLO_DB_URI: "jdbc:postgresql://db:5432/postgres"
       WEBAPOLLO_CHADO_DB_USERNAME: postgres
       WEBAPOLLO_CHADO_DB_PASSWORD: password
       WEBAPOLLO_CHADO_DB_DRIVER: "org.postgresql.Driver"
       WEBAPOLLO_CHADO_DB_DIALECT: "org.hibernate.dialect.PostgresPlusDialect"
-      WEBAPOLLO_CHADO_DB_URI: "jdbc:postgresql://chado/postgres"
-      # Optional, allow image to 'wait'
-      WEBAPOLLO_DB_HOST: db
-      WEBAPOLLO_DB_PORT: 5432
-      WEBAPOLLO_DB_NAME: postgres
-      WEBAPOLLO_CHADO_DB_HOST: chado
-      WEBAPOLLO_CHADO_DB_PORT: 5432
-      WEBAPOLLO_CHADO_DB_NAME: postgres
+      WEBAPOLLO_CHADO_DB_URI: "jdbc:postgresql://chado:5432/postgres"
     volumes:
       - "./data:/data"
   db:
@@ -40,6 +33,8 @@ services:
     environment:
       POSTGRES_PASSWORD: password
       INSTALL_CHADO_SCHEMA: "0"
+    volumes:
+      - ./.pgdata:/var/lib/postgresql/data
   chado:
     image: erasche/chado:1.31-jenkins97-pg9.5
     environment:

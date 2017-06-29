@@ -1,0 +1,3 @@
+CREATE USER apollo WITH PASSWORD 'apollo';
+GRANT ALL PRIVILEGES ON DATABASE "apollo" to apollo;
+GRANT ALL PRIVILEGES ON DATABASE "chado" to apollo;

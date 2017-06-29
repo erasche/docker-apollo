@@ -11,9 +11,7 @@
 ## Running the Container
 
 The container is publicly available as `quay.io/erasche/apollo:remote_user`.
-
 The recommended method for launching the container is via docker-compose
-due to a dependency on a postgres image.
 
 There are a large number of environment variables that can be adjusted to suit
 your site's needs. These can be seen in the

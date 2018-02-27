@@ -1,11 +1,12 @@
 # WebApollo
 # VERSION 2.0
 FROM tomcat:8.5-jre8-alpine
-MAINTAINER Eric Rasche <esr@tamu.edu>
+MAINTAINER E Rasche <hxr@hx42.org>
 
 COPY build.sh /bin/build.sh
 ADD apollo-config.groovy /apollo/apollo-config.groovy
-ENV WEBAPOLLO_VERSION b67f41739467a11dbec410f592af4460b767f56e
+ENV WEBAPOLLO_VERSION=b67f41739467a11dbec410f592af4460b767f56e \
+	APOLLO_TARGET=deploy
 
 RUN apk update && \
 	apk add --update tar && \

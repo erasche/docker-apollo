@@ -4,8 +4,8 @@ set -ex
 export JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk/jre
 
 cd /apollo/ && \
-	./apollo $APOLLO_TARGET && \
-	./apollo $APOLLO_TARGET && \
+	./apollo deploy && \
+	./apollo deploy && \
 	# Move to tmp dir
 	cp /apollo/target/apollo*.war /tmp/ && \
 	# So we can remove ~1.6 GB of cruft from the image. Ignore errors because cannot remove parent dir /apollo/

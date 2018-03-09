@@ -15,7 +15,7 @@ environments {
 
             properties {
                 // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
-                jmxEnabled = false
+                jmxEnabled                    = false
                 initialSize                   = 5
                 maxActive                     = 50
                 minIdle                       = 5
@@ -27,11 +27,11 @@ environments {
                 validationQuery               = "SELECT 1"
                 validationQueryTimeout        = 3
                 validationInterval            = 15000
-                testOnBorrow = true
-                testWhileIdle = true
-                testOnReturn = false
-                jdbcInterceptors = "ConnectionState"
-                defaultTransactionIsolation = java.sql.Connection.TRANSACTION_READ_COMMITTED
+                testOnBorrow                  = true
+                testWhileIdle                 = true
+                testOnReturn                  = false
+                jdbcInterceptors              = "ConnectionState"
+                defaultTransactionIsolation   = java.sql.Connection.TRANSACTION_READ_COMMITTED
             }
         }
         dataSource_chado {
@@ -45,7 +45,7 @@ environments {
 
             properties {
                 // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
-                jmxEnabled = false
+                jmxEnabled                    = false
                 initialSize                   = 5
                 maxActive                     = 50
                 minIdle                       = 5
@@ -57,11 +57,11 @@ environments {
                 validationQuery               = "SELECT 1"
                 validationQueryTimeout        = 3
                 validationInterval            = 15000
-                testOnBorrow = true
-                testWhileIdle = true
-                testOnReturn = false
-                jdbcInterceptors = "ConnectionState"
-                defaultTransactionIsolation = java.sql.Connection.TRANSACTION_READ_COMMITTED
+                testOnBorrow                  = true
+                testWhileIdle                 = true
+                testOnReturn                  = false
+                jdbcInterceptors              = "ConnectionState"
+                defaultTransactionIsolation   = java.sql.Connection.TRANSACTION_READ_COMMITTED
             }
         }
     }
@@ -123,12 +123,15 @@ apollo {
 jbrowse {
     git {
         url = "https://github.com/GMOD/jbrowse"
-        tag = "1.12.2-apollo"
+        tag = "9d765aecaee02a41844fed11a241fdb4c35fc9f8"
         alwaysPull = true
         alwaysRecheck = true
     }
     plugins {
-        WebApollo{
+        NeatHTMLFeatures{
+            included = true
+        }
+        NeatCanvasFeatures{
             included = true
         }
         RegexSequenceSearch{
@@ -141,6 +144,17 @@ jbrowse {
             git = 'https://github.com/elsiklab/gccontent'
             branch = 'master'
             alwaysRecheck = "true"
+            alwaysPull = "true"
+        }
+        MyVariantInfo {
+            git = 'https://github.com/GMOD/myvariantviewer'
+            branch = 'master'
+            alwaysRecheck = "true"
+            alwaysPull = "true"
+        }
+        SashimiPlot {
+            git = 'https://github.com/cmdcolin/sashimiplot'
+            branch = 'master'
             alwaysPull = "true"
         }
     }

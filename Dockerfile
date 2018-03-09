@@ -10,7 +10,7 @@ ENV WEBAPOLLO_VERSION dfea639e4c1fd8f2321d2dac4c5aa52247a94d14
 RUN apk update && \
 	apk add --update tar && \
 	apk add curl ca-certificates bash nodejs git postgresql-client maven libpng \
-		make g++ zlib-dev expat-dev nodejs-npm sudo openssh-client && \
+		make g++ zlib-dev expat-dev nodejs-npm sudo openssh-client perl && \
 	npm install -g bower && \
 	adduser -s /bin/bash -D -h /apollo apollo && \
 	curl -L https://github.com/GMOD/Apollo/archive/${WEBAPOLLO_VERSION}.tar.gz | \

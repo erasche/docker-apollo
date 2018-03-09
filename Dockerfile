@@ -5,7 +5,7 @@ MAINTAINER E Rasche <hxr@hx42.org>
 
 COPY build.sh /bin/build.sh
 ADD apollo-config.groovy /apollo/apollo-config.groovy
-ENV WEBAPOLLO_VERSION b67f41739467a11dbec410f592af4460b767f56e
+ENV WEBAPOLLO_VERSION dfea639e4c1fd8f2321d2dac4c5aa52247a94d14
 
 RUN apk update && \
 	apk add --update tar && \

@@ -80,6 +80,16 @@ apollo {
     feature_has_status = System.getenv("WEBAPOLLO_FEATURE_HAS_STATUS").equals("true")
     translation_table = "/config/translation_tables/ncbi_" + (System.getenv("WEBAPOLLO_TRANSLATION_TABLE") ?: "1") + "_translation_table.txt"
     get_translation_code = System.getenv("WEBAPOLLO_TRANSLATION_TABLE") ? System.getenv("WEBAPOLLO_TRANSLATION_TABLE").toInteger() : 1
+    user_pure_memory_store = true
+    is_partial_translation_allowed = false // unused so far
+    export_subfeature_attrs = System.getenv("WEBAPOLLO_EXPORT_SUBFEATURE_ATTRS").equals("true")
+
+    // settings for Chado export
+    // set chado_export_fasta_for_sequence if you want the reference sequence FASTA to be exported into the database
+    // Note: Enabling this feature can be memory intensive
+    chado_export_fasta_for_sequence = System.getenv("WEBAPOLLO_CHADO_EXPORT_FASTA_SEQUENCE").equals("true")
+    // set chado_export_fasta_for_cds if you want the CDS FASTA to be exported into the database
+    chado_export_fasta_for_cds = System.getenv("WEBAPOLLO_CHADO_EXPORT_FASTA_CDSS").equals("true")
 
     // TODO: should come from config or via preferences database
     splice_donor_sites = System.getenv("WEBAPOLLO_SPLICE_DONOR_SITES") ? System.getenv("WEBAPOLLO_SPLICE_DONOR_SITES").split(",") : ["GT"]
@@ -94,6 +104,20 @@ apollo {
         firstName = System.getenv("APOLLO_ADMIN_FIRST_NAME") ?: "Ad"
         lastName = System.getenv("APOLLO_ADMIN_LAST_NAME") ?: "min"
     }
+
+    authentications = [
+        [
+            "name":"Remote User Authenticator",
+            "className":"remoteUserAuthenticatorService",
+            "active":true
+        ],
+        [
+            "name":"Username Password Authenticator",
+            "className":"usernamePasswordAuthenticatorService",
+            "active":true
+        ]
+    ]
+
 }
 
 jbrowse {

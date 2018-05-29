@@ -1,7 +1,6 @@
 # WebApollo
 # VERSION 2.0
 FROM tomcat:8.5-jre8-alpine
-MAINTAINER E Rasche <hxr@hx42.org>
 
 COPY build.sh /bin/build.sh
 ADD apollo-config.groovy /apollo/apollo-config.groovy
